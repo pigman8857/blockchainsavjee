@@ -5,8 +5,8 @@ class Block {
     this.previousHash = previousHash;
     this.timestamp = timestamp;
     this.data = data;
-    this.hash = this.calculateHash();
     this.nonce = 0;
+    this.hash = this.calculateHash();
   }
 
   calculateHash() {
@@ -32,7 +32,7 @@ class Block {
 class BlockChain {
   constructor() {
     this.chain = [this.createGenesisBlock()];
-    this.difficulty = 2;
+    this.difficulty = 5;
   }
 
   createGenesisBlock() {
