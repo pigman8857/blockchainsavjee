@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pigman8857/blockchainsavjee/issues"
   },
-  "homepage": "https://github.com/pigman8857/blockchainsavjee#readme"
+  "homepage": "https://github.com/pigman8857/blockchainsavjee#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
 }
