@@ -18,27 +18,19 @@ class Block {
   }
 
   mineBlock(difficulty) {
-    console.log(`mineBlock with difficulty ${difficulty}`);
-    console.log(`target :  ${Array(difficulty + 1).join("0")}`);
     while (
       this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")
     ) {
       this.nonce++;
       this.hash = this.calculateHash();
     }
-    console.log(
-      `substring hash ${this.hash.substring(0, difficulty)} works with nonce ${
-        this.nonce
-      }!`
-    );
-    console.log(`Block Mined : ${this.hash}`);
   }
 }
 
 class BlockChain {
   constructor() {
     this.chain = [this.createGenesisBlock()];
-    this.difficulty = 3;
+    this.difficulty = 2;
   }
 
   createGenesisBlock() {
@@ -76,10 +68,4 @@ class BlockChain {
 
 let savjeeCoin = new BlockChain();
 console.log(savjeeCoin);
-console.log("mine block 1..");
-savjeeCoin.addBlock(new Block(1, "1/11/2020", { amount: 4 }));
-console.log("mine block 2..");
-savjeeCoin.addBlock(new Block(2, "1/12/2020", { amount: 10 }));
-console.log(savjeeCoin);
 
-console.log(`is block valid ${savjeeCoin.isChainValid()}`);
