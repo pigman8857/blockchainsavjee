@@ -15,11 +15,3 @@ savjeeCoin.addTransaction(txn1);
 console.log('\n Starting the miner');
 savjeeCoin.minePendingTransactions(myWalletAddress);
 console.log('\nbalance of xavier is', savjeeCoin.getBalanceOfAddress(myWalletAddress));
-
-console.log('\n see transaction ');
-
-for(const block of savjeeCoin.chain){
-    for (const transaction of block.transactions) {
-        console.log(transaction);
-    }
-}
